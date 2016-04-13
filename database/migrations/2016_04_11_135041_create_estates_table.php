@@ -14,7 +14,7 @@ class CreateEstatesTable extends Migration
     {
         Schema::create('estates', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid');
+            $table->uuid('uuid')->unique();
             $table->integer('fk_location')->unsigned();
             $table->integer('fk_address')->unsigned();
             $table->integer('fk_user')->unsigned();

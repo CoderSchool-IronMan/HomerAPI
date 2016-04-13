@@ -14,7 +14,7 @@ class CreateReactionsTable extends Migration
     {
         Schema::create('reactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid');
+            $table->uuid('uuid')->unique();
             $table->enum('action_type', ['like', 'dislike', 'report']);
             $table->integer('fk_user')->unsigned();
             $table->integer('fk_estate')->unsigned();

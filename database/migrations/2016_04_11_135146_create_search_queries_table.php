@@ -14,7 +14,7 @@ class CreateSearchQueriesTable extends Migration
     {
         Schema::create('search_queries', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid');
+            $table->uuid('uuid')->unique();
             $table->mediumText('query');
             $table->integer('fk_user')->unsigned();
             $table->timestamps();

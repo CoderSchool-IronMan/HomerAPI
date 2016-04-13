@@ -14,7 +14,7 @@ class CreateEstateImagesTable extends Migration
     {
         Schema::create('estate_images', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid');
+            $table->uuid('uuid')->unique();
             $table->string('url', 1024);
             $table->integer('fk_estate')->unsigned();
             $table->timestamps();
